@@ -1,0 +1,79 @@
+{
+  "name": "@sittingduck/maker-core",
+  "version": "1.0.2",
+  "description": "MAKER Framework for reliable multi-step LLM reasoning with voting and red-flagging",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "lint": "eslint src/",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build",
+    "demo": "tsx examples/qa-demo.ts",
+    "demo:anthropic": "tsx examples/qa-demo.ts"
+  },
+  "keywords": [
+    "llm",
+    "maker",
+    "voting",
+    "reliability",
+    "ai",
+    "openai",
+    "anthropic",
+    "claude",
+    "gpt",
+    "decomposition",
+    "consensus",
+    "red-flagging"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gatos90/maker.git"
+  },
+  "homepage": "https://github.com/Gatos90/maker#readme",
+  "bugs": {
+    "url": "https://github.com/Gatos90/maker/issues"
+  },
+  "peerDependencies": {
+    "openai": "^6.9.1",
+    "@anthropic-ai/sdk": "^0.71.0"
+  },
+  "peerDependenciesMeta": {
+    "openai": {
+      "optional": true
+    },
+    "@anthropic-ai/sdk": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@anthropic-ai/sdk": "^0.71.0",
+    "@types/node": "^24.10.1",
+    "openai": "^6.9.1",
+    "tsx": "^4.20.6",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.14"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
